@@ -4,7 +4,10 @@ namespace EnergyManagementSystem.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        // Assuming there's a byte array to hold the picture data
-        public byte[] Data { get; set; }
+        public string Grid { get; set; }
+
+        public virtual ICollection<Group> Groups { get; set; }
+        public virtual ICollection<Component> Components { get; set; }
+        public virtual ICollection<PictureAccess> PictureAccess { get; set; }
     }
 }
