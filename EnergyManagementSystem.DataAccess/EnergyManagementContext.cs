@@ -9,7 +9,7 @@ public class EnergyManagementContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        // Replace with your connection string
+        // Replace with connection string
         optionsBuilder.UseSqlServer("YourConnectionStringHere");
     }
 
