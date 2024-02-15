@@ -26,7 +26,6 @@ public Dictionary<string, int> Amount { get; set; }
     {
         Amount[type] = value;
     }
-        // Navigation properties
         public virtual ICollection<FuelContract> FuelConnections { get; set; }
     }
 }

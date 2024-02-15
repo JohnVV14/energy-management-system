@@ -10,6 +10,7 @@ public abstract class Component
 
     public virtual ComponentType ComponentType { get; set; }
     public virtual Group? Group { get; set; }
+    public virtual Picture? Picture { get; set; }
     public virtual ICollection<Component> Components { get; set; }
     public virtual ICollection<ComponentIO> ComponentIOs { get; set; }
     public virtual ICollection<FuelContract> FuelConnections { get; set; }

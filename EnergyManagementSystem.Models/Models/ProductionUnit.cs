@@ -35,6 +35,8 @@ namespace EnergyManagementSystem.Models
         Performance[type] = value;
     }
 
+     public virtual ICollection<FuelContract> FuelConnections { get; set; }
+
     }
 
 
