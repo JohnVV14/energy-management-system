@@ -6,20 +6,20 @@ namespace EnergyManagementSystem.Models
         public string Type { get; set; }
         public string Name { get; set; }
         public string MeasurementUnit { get; set; }
-        public int Auxiliary_power_abs { get; set; }
-        public int Auxiliary_power_rel { get; set; }
-        public string Auxiliary_from { get; set; }
-        public int Max_load_change_speed { get; set; }
-        public double Preparation_time_hot { get; set; }
-        public double Performancereparation_time_warm { get; set; }
-        public double Preparation_time_cold { get; set; }
-        public double Cooling_time_hot { get; set; }
-        public double Cooling_time_warm { get; set; }
-        public string Measure_point { get; set; }
-        public bool Start_ramp { get; set; }
-        public string Hot_start_ramp { get; set; }
-        public string Cold_start_ramp { get; set; }
-        public double Load_interval { get; set; }
+        public int AuxiliaryPowerAbs { get; set; }
+        public int AuxiliaryPowerRel { get; set; }
+        public string AuxiliaryFrom { get; set; }
+        public int MaxLoadChangeSpeed { get; set; }
+        public double PreparationTimeHot { get; set; }
+        public double PerformancereparationTimeWarm { get; set; }
+        public double PreparationTimeCold { get; set; }
+        public double CoolingTimeHot { get; set; }
+        public double CoolingTimeWarm { get; set; }
+        public string MeasurePoint { get; set; }
+        public bool StartRamp { get; set; }
+        public string HotStartRamp { get; set; }
+        public string ColdStartRamp { get; set; }
+        public double LoadInterval { get; set; }
 
             // Dictionary to represent performance with different types
     public Dictionary<string, int> Performance { get; set; }
