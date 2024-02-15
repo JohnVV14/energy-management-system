@@ -13,7 +13,6 @@ namespace EnergyManagementSystem.Models
 
 public Dictionary<string, int> DischargeCapacity { get; set; }
 
-    // Method to add performance value
     public void AddDischargeCapacity(string type, int value)
     {
         DischargeCapacity[type] = value;
@@ -21,7 +20,6 @@ public Dictionary<string, int> DischargeCapacity { get; set; }
 
     public Dictionary<string, int> ChargeCapacity { get; set; }
 
-    // Method to add performance value
     public void AddChargeCapacity(string type, int value)
     {
         ChargeCapacity[type] = value;
@@ -41,7 +39,6 @@ public Dictionary<string, int> DischargeCapacity { get; set; }
         ContentCapacity = new Dictionary<string, int>();
     }
 
-        // Navigation properties
         public virtual ICollection<FuelContract> FuelConnections { get; set; }
     }
 }

@@ -2,7 +2,7 @@ namespace EnergyManagementSystem.Models;
 
 public class FuelConnection
 {
-    public string fuel { get; set; }
+    public string Fuel { get; set; }
     public int StartCost { get; set; }
     public int StopCost { get; set; }
     public double MaintenanceCostVar { get; set; }
