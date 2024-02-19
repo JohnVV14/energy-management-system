@@ -1,25 +1,15 @@
-using MongoDB.Driver;
+using Microsoft.EntityFrameworkCore;
 using EnergyManagementSystem.Models;
 
 namespace EnergyManagementSystem.DataAccess
 {
-    public class MongoDbContext
+    public class ApplicationDbContext : DbContext
     {
-        private readonly IMongoDatabase _database = null;
-
-        public MongoDbContext()
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
         {
-            var client = new MongoClient("mongodb+srv://CarlBedraux:<password>@cluster0.jjcn6vj.mongodb.net/");
-            if (client != null)
-                _database = client.GetDatabase("TestiTest");
         }
 
-        public IMongoCollection<Component> Components
-        {
-            get
-            {
-                return _database.GetCollection<Component>("Component");
-            }
-        }
+        public DbSet<Component> Components { get; set; }
     }
 }

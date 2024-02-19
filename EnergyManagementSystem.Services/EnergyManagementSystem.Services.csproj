@@ -2,6 +2,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EnergyManagementSystem.Models\EnergyManagementSystem.Models.csproj" />
+    <ProjectReference Include="..\EnergyManagementSystem.DataAccess\EnergyManagementSystem.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8" />
   </ItemGroup>
 
   <PropertyGroup>

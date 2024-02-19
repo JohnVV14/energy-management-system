@@ -1,4 +1,4 @@
-using MongoDB.Driver;
+using Microsoft.EntityFrameworkCore;
 using EnergyManagementSystem.DataAccess;
 using EnergyManagementSystem.Models;
 using System.Collections.Generic;
@@ -8,36 +8,43 @@ namespace EnergyManagementSystem.DataAccess
 {
     public class ComponentRepository : IComponentRepository
     {
-        private readonly MongoDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ComponentRepository(MongoDbContext context)
+        public ComponentRepository(ApplicationDbContext context)
         {
             _context = context;
         }
 
         public Component GetById(int id)
         {
-            return _context.Components.Find(c => c.Id == id).FirstOrDefault();
+            return _context.Components.Find(id);
         }
 
         public IEnumerable<Component> GetAll()
         {
-            return _context.Components.Find(_ => true).ToList();
+            return _context.Components.ToList();
         }
 
         public void Add(Component component)
         {
-            _context.Components.InsertOne(component);
+            _context.Components.Add(component);
+            _context.SaveChanges();
         }
 
         public void Update(Component component)
         {
-            _context.Components.ReplaceOne(c => c.Id == component.Id, component);
+            _context.Components.Update(component);
+            _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            _context.Components.DeleteOne(c => c.Id == id);
+            var component = _context.Components.Find(id);
+            if (component != null)
+            {
+                _context.Components.Remove(component);
+                _context.SaveChanges();
+            }
         }
     }
 }
