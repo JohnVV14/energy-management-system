@@ -1,20 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using EnergyManagementSystem.Models;
 
-public class EnergyManagementContext : DbContext
+namespace EnergyManagementSystem.DataAccess
 {
-    public DbSet<Component> Components { get; set; }
-    public DbSet<Group> Groups { get; set; }
-    // Add DbSets for other entities...
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public class ApplicationDbContext : DbContext
     {
-        // Replace with your connection string
-        optionsBuilder.UseSqlServer("YourConnectionStringHere");
-    }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        {
+        }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        // Fluent API configuration for relationships and database mappings
+        public DbSet<Component> Components { get; set; }
     }
 }
