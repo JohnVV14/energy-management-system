@@ -21,7 +21,7 @@ public Dictionary<string, int> Amount { get; set; }
         Amount = new Dictionary<string, int>();
     }
 
-    // Method to add performance value
+    // Method to add performance value hejhej
     public void AddAmount(string type, int value)
     {
         Amount[type] = value;
