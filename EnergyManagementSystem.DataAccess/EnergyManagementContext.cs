@@ -1,20 +1,25 @@
-using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
 using EnergyManagementSystem.Models;
 
-public class EnergyManagementContext : DbContext
+namespace EnergyManagementSystem.DataAccess
 {
-    public DbSet<Component> Components { get; set; }
-    public DbSet<Group> Groups { get; set; }
-    // Add DbSets for other entities...
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public class MongoDbContext
     {
-        // Replace with connection string
-        optionsBuilder.UseSqlServer("YourConnectionStringHere");
-    }
+        private readonly IMongoDatabase _database = null;
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        // Fluent API configuration for relationships and database mappings
+        public MongoDbContext()
+        {
+            var client = new MongoClient("mongodb+srv://CarlBedraux:<password>@cluster0.jjcn6vj.mongodb.net/");
+            if (client != null)
+                _database = client.GetDatabase("TestiTest");
+        }
+
+        public IMongoCollection<Component> Components
+        {
+            get
+            {
+                return _database.GetCollection<Component>("Component");
+            }
+        }
     }
 }
