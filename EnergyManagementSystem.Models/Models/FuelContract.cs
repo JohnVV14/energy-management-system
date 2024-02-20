@@ -14,6 +14,7 @@ namespace EnergyManagementSystem.Models
         public float Co2EuAllowence { get; set; }
         public string? Fuel { get; set; }
 
+
         public Dictionary<string, int> Amount { get; set; }
 
         public FuelContract()
