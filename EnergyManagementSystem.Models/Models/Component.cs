@@ -13,9 +13,5 @@ public abstract class Component
     public virtual Picture? Picture { get; set; }
     public virtual ICollection<Component> Components { get; set; }
     public virtual ICollection<ComponentIO> ComponentIOs { get; set; }
-    public virtual ICollection<FuelContract> FuelConnections { get; set; }
-    public virtual ICollection<Sink> Sinks { get; set; }
-    public virtual ICollection<ProductionUnit> ProductionUnits { get; set; }
-    public virtual ICollection<Storage> Storages { get; set; }
 
 }

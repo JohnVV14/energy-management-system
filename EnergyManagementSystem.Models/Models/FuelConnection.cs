@@ -11,4 +11,10 @@ public class FuelConnection
 
     public virtual FuelContract FuelContract { get; set; }
     public virtual ProductionUnit ProductionUnit { get; set; }
+
+    public FuelConnection(FuelContract fuelContract, ProductionUnit productionUnit)
+    {
+        FuelContract = fuelContract;
+        ProductionUnit = productionUnit;
+    }
 }

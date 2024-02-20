@@ -39,6 +39,6 @@ public Dictionary<string, int> DischargeCapacity { get; set; }
         ContentCapacity = new Dictionary<string, int>();
     }
 
-        public virtual ICollection<FuelContract> FuelConnections { get; set; }
+
     }
 }

@@ -21,14 +21,12 @@ namespace EnergyManagementSystem.Models
             Amount = new Dictionary<string, int>();
             MeasurementPointForUsedAmount = null;
             Fuel = null;
-            FuelConnections = new List<FuelContract>();
+            FuelConnections = new List<FuelConnection>();
         }
 
-        // Method to add performance value hejhej
-        public void AddAmount(string type, int value)
-        {
-            Amount[type] = value;
-        }
-        public virtual ICollection<FuelContract>? FuelConnections { get; set; }
+        public virtual ICollection<FuelConnection>? FuelConnections { get; set; }
+
+        public virtual ICollection<ProductionUnit>? ProductionUnits { get; set; }
+
     }
 }
