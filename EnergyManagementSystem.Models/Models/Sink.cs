@@ -23,4 +23,3 @@ public Dictionary<string, int> Power { get; set; }
     }
  
     }
-}
