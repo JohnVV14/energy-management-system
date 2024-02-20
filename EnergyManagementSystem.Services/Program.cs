@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
 
+
 namespace EnergyManagementSystem.Services
 {
     public class Program
